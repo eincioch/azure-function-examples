@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "BasicFunctionApp": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7000"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 32566,
+      "useSSL": false
+    }
+  }
+}

@@ -1,26 +1,28 @@
+using System;
+using System.IO;
 using Microsoft.AspNetCore.Http;
+using System.Net;
+using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
-using System;
-using System.IO;
-using System.Net;
-using System.Threading.Tasks;
+using System.Composition;
 
-namespace StorageQueueTriggerDemo
+namespace BlobTriggerDemo
 {
     public class Functions
     {
-        [FunctionName("HttpTrigger")]
+        [FunctionName("BlobOutputTrigger")]
         [OpenApiOperation(operationId: "Run", tags: new[] { "message" })]
-        [OpenApiParameter(name: "message", In = ParameterLocation.Query, Required = true, Type = typeof(string), Description = "Message to put on the queue")]
+        [OpenApiParameter(name: "message", In = ParameterLocation.Query, Required = true, Type = typeof(string), Description = "Message to put in the Blob Storage")]
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "HTTP response")]
         [return: Queue("message-queue-demo")]
-        public async Task<string> HttpTrigger(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req)
+        public async Task<string> BlobOutputTrigger(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+            [Blob("sample-blobs/HttpTriggered", FileAccess.Write)] TextWriter inputWriter)
         {
             string message = req.Query["message"];
 
@@ -31,13 +33,15 @@ namespace StorageQueueTriggerDemo
             if (string.IsNullOrWhiteSpace(message))
                 return null;
 
+            await inputWriter.WriteLineAsync(message);
+
             return message;
         }
 
-        [FunctionName("StorageQueueTrigger")]
-        public void Run([QueueTrigger("message-queue-demo", Connection = "AzureWebJobsStorage")]string myQueueItem, ILogger log)
+        [FunctionName("BlobTriggerExample")]
+        public void NotifyBlobInsertion([BlobTrigger("sample-blobs/{name}", Connection = "AzureWebJobsStorage")]Stream blob, string name, ILogger log)
         {
-            Console.WriteLine($"C# Queue trigger function processed: {myQueueItem}");
+            Console.WriteLine($"Processed a Blob with the name of {name} and the size of {blob.Length} bytes.");
         }
     }
 }

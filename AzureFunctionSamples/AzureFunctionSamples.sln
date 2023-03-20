@@ -17,19 +17,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimerTriggerDemo", "TimerTr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StorageQueueTriggerDemo", "StorageQueueTriggerDemo\StorageQueueTriggerDemo.csproj", "{254B2BBF-31BB-4FA5-81DD-B6C13AB39D57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlobTriggerDemo", "BlobTriggerDemo\BlobTriggerDemo.csproj", "{B890CC8D-49B2-4DCF-9C72-DC75905F7ACA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlobTriggerDemo", "BlobTriggerDemo\BlobTriggerDemo.csproj", "{B890CC8D-49B2-4DCF-9C72-DC75905F7ACA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRTriggerDemo", "SignalRTriggerDemo\SignalRTriggerDemo.csproj", "{E0F1EC9A-10CE-4D67-AD5F-CA28C3AD5C57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRTriggerDemo", "SignalRTriggerDemo\SignalRTriggerDemo.csproj", "{E0F1EC9A-10CE-4D67-AD5F-CA28C3AD5C57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBusTriggerExample", "ServiceBusTriggerExample\ServiceBusTriggerExample.csproj", "{FB6D5CB3-EB82-4E9F-A8E2-5C2CEC41B5B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceBusTriggerExample", "ServiceBusTriggerExample\ServiceBusTriggerExample.csproj", "{FB6D5CB3-EB82-4E9F-A8E2-5C2CEC41B5B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosDbTriggerDemo", "CosmosDbTriggerDemo\CosmosDbTriggerDemo.csproj", "{B205F651-E277-40A7-A5C9-4152D149D74E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CosmosDbTriggerDemo", "CosmosDbTriggerDemo\CosmosDbTriggerDemo.csproj", "{B205F651-E277-40A7-A5C9-4152D149D74E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventGridExample", "EventGridExample\EventGridExample.csproj", "{49ED8B6B-E685-4E77-AC90-775D05364888}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventGridExample", "EventGridExample\EventGridExample.csproj", "{49ED8B6B-E685-4E77-AC90-775D05364888}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IotHubTriggerExample", "IotHubTriggerExample\IotHubTriggerExample.csproj", "{1760762E-E253-4FC8-A2B9-3D2E40ADBA43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IotHubTriggerExample", "IotHubTriggerExample\IotHubTriggerExample.csproj", "{1760762E-E253-4FC8-A2B9-3D2E40ADBA43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqTriggerExample", "RabbitMqTriggerExample\RabbitMqTriggerExample.csproj", "{E161A1D1-072E-4B7D-9D4C-7A0399FDA619}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMqTriggerExample", "RabbitMqTriggerExample\RabbitMqTriggerExample.csproj", "{E161A1D1-072E-4B7D-9D4C-7A0399FDA619}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicDurableFunction", "BasicDurableFunction\BasicDurableFunction.csproj", "{DDADFF2E-8140-42E4-AB82-1C8A92FDE35A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{E161A1D1-072E-4B7D-9D4C-7A0399FDA619}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E161A1D1-072E-4B7D-9D4C-7A0399FDA619}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E161A1D1-072E-4B7D-9D4C-7A0399FDA619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDADFF2E-8140-42E4-AB82-1C8A92FDE35A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDADFF2E-8140-42E4-AB82-1C8A92FDE35A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDADFF2E-8140-42E4-AB82-1C8A92FDE35A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDADFF2E-8140-42E4-AB82-1C8A92FDE35A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
